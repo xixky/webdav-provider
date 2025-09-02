@@ -1,5 +1,10 @@
 name: Build APK
-on: [pull_request, push]
+on: 
+  push:
+    branches: [main]   # 指定触发分支
+  pull_request:
+    branches: [main]   # 指定 PR 目标分支
+  workflow_dispatch:   # 添加手动触发
 jobs:
   build-apk:
     runs-on: ubuntu-latest
